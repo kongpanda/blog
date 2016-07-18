@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Jason Song" />
+
+
+
+<meta name="description" content="This blog is written a few months ago, to upload it only for late check purpose.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CIC WebChat 4.0 Tool Installation Guide">
+<meta property="og:url" content="http://yoursite.com/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/index.html">
+<meta property="og:site_name" content="Jason Personal Blog">
+<meta property="og:description" content="This blog is written a few months ago, to upload it only for late check purpose.">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-2.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-Settingone.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-SelfSign.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/URLRewrite.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseProxy.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseRuleOne.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/RewriteRule.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ICserverRewireRule.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/I3WebServicesConfigUtility-1.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/mmcConsole.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TrustedRootCertificates_Import.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/WebChatMianPage.PNG">
+<meta property="og:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Customer-Agent.png">
+<meta property="og:updated_time" content="2016-07-18T04:28:18.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CIC WebChat 4.0 Tool Installation Guide">
+<meta name="twitter:description" content="This blog is written a few months ago, to upload it only for late check purpose.">
+<meta name="twitter:image" content="http://yoursite.com/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG">
+
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Jason Personal Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/blog//favicon.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/blog/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CIC WebChat 4.0 Tool Installation Guide | Jason Personal Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = /blog/; </script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            <img src="/blog//img/jasonsong.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/">Jason Song</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Back to basic</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog//blog/">主页</a></li>
+                        
+                            <li><a href="/blog//blog/archives/">所有文章</a></li>
+                        
+                            <li><a href="/blog//blog/tags/">标签云</a></li>
+                        
+                            <li><a href="/blog//blog/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:jasonsong74@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Background-Job/">Background Job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CIC/">CIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSharp/">CSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Commom/">Commom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/WebChat/">WebChat</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">An IT guy</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Jason Song</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                <img src="/blog//img/jasonsong.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="回到主页">Jason Song</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Back to basic</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">主页</a></li>
+                
+                    <li><a href="/blog/archives/">所有文章</a></li>
+                
+                    <li><a href="/blog/tags/">标签云</a></li>
+                
+                    <li><a href="/blog/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:jasonsong74@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-CIC-WebChat-4-0-Tool-Installation-Guide" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/" class="article-date">
+      <time datetime="2015-04-04T16:00:00.000Z" itemprop="datePublished">2015-04-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CIC WebChat 4.0 Tool Installation Guide
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/Call-Centre/">Call Centre</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CIC/">CIC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/WebChat/">WebChat</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h3><p>This guide is a goal for CIC WebChat implementation evaluation.</p>
+<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ul>
+<li>A web server with Windows 2008 R2 &amp; II7.5</li>
+<li>A IC server 4.0 (Only one for this scenario,Not HA)</li>
+<li>A client PC with Interaction Client:.Net Edition installed</li>
+<li>WebSvcsConfiguration.zip &amp; WebSvcsI3Root.zip, these two zip files locate in //ICServer/IC_WebServicesChat, ICServer is the server installed IC 4.0 package. </li>
+</ul>
+<blockquote>
+<p>In this scenario, we only focus on Windows &amp; IIS platform. For other web server installation,please refer to the original document.<br> And also, we do not cover IC server 4.0 installation,we assume that IC server and the appropriate licenses are all done for this scenario.</p>
+</blockquote>
+<hr>
+<h3 id="Installation-amp-Configuration-Steps"><a href="#Installation-amp-Configuration-Steps" class="headerlink" title="Installation &amp; Configuration Steps"></a>Installation &amp; Configuration Steps</h3><h4 id="IC-Server"><a href="#IC-Server" class="headerlink" title="IC Server"></a>IC Server</h4><ul>
+<li>Create a Chat ACD queue named “TestChat” by IA tool.</li>
+<li><p>Enable queue ACD， Active，Record All Calls， Emails，Chats and Instant Questions in this workgroup functionality.</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG" alt="">.</p>
+<p>Select <strong>“ACD”</strong> Tab on <strong>“Workgroup Configuration - TestChat”</strong>, </p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-2.PNG" alt=""></p>
+<p>Set the value of Chat Max.Assign &gt;=1, this value can be overwritten later for specific agent based on his capability.   </p>
+</li>
+<li>Create an agent account named “TestAgent”.</li>
+<li>Create Station with Chat &amp; ACD access license.<h4 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h4></li>
+<li>Download <a href="Current version is 3">ARR</a> and install it on web server. <em>Using this to rewrite the chat request sent by the customer to the back-end IC server.</em> </li>
+<li>Create /I3Root/Server1 directory under IIS default web site , this we use the default IIS root directory C:/inetpub/wwwroot </li>
+<li><p>Enable https, select hostname via IIS Manager console and double click <strong>Server Certificates</strong> on right pane.See the blow figure.</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-Settingone.PNG" alt=""> </p>
+<p>For this evaluation purpose, we use “Create Self-Signed Certificate”.</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-SelfSign.PNG" alt=""> </p>
+<p>After the above steps, Click <strong>“Binding…”</strong> from <strong>Actions</strong> pane after selecting <strong>“Default Web Site”</strong> on IIS Manager to add https port binding.     </p>
+</li>
+<li><p>Setup URL rewrite Rule, Select “Server1” item under “Default Web Site” -&gt; “I3Root”, double click <strong>“URL Rewrite”</strong>,</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/URLRewrite.PNG" alt=""></p>
+<p>click “Add Rule(s)…” from the right <strong>Action</strong> pane then add rule window will pop up as below:</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseProxy.PNG" alt=""> </p>
+</li>
+</ul>
+<p>Select <strong>“Reverse Proxy”</strong> and click “OK” button,the following window will show,</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseRuleOne.PNG" alt=""></p>
+<p>type ICServer in the <strong>Enter the server name or the IP address where HTTP requests will be<br>forwarded</strong> text box, <strong>clear “Enable SSL offloading”</strong> causing the connection between the customer and the web server, the connection between the web server and the IC server are both SSL.<br> <strong>We strong recommend, put the Full IC Server’s hostname here and make sure that the web server can refer to the IC Server using the IC Server hostname via DNS or the web server’s host file.</strong>After finish rules addition,we will get the result as. </p>
+<p> <img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/RewriteRule.PNG" alt=""></p>
+<p> Double click this rule,scroll down and locate the <strong>Action</strong> section in the pop window,</p>
+<p> <img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ICserverRewireRule.PNG" alt=""></p>
+<p> key in such information <code>{C:1}://ICServer Full hostname:3508/{R:1}</code> in <strong>“Rewrute URL”</strong> text box, then click “Apply” button on the right “Action” pane.</p>
+<ul>
+<li>Unzip WebSvcsI3Root.zip, retrieve contents under I3Root directory and put them into web site, here is C:/inetpub/wwwroot/I3Root.On other hand, if not create I3Root under C:/inetpub/wwwroot previously, this can copy or move the unzip contents into <strong>C:/inetpub/wwwroot</strong> including <em>I3Root</em> directory .</li>
+<li><p>Run the interaction Web Tools Configuration Utility,</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/I3WebServicesConfigUtility-1.PNG" alt=""> </p>
+<p>this tool is included into WebSvcsConfiguration.zip. If you only want to have Chat, Clear “call back” within Interaction Type section. Because we using SSL among Web server and IC Server, please make “Secure Connetion(HTTPs)” enable.</p>
+</li>
+<li><p>Copy ServerGroupCertificate.cer to the web server, make sure this file must not be accessed from web site. This CA file is located  D:/I3/IC/Certificates/ServerGroup on IC Server.<em>Note:If IC Server name is change,the file must be regenerated,and we re-import certificate by the following step.</em> 1.Opne MMC Console via key the mmc command in OS’s run box.Click <strong>“Add/Remove Snap-in…”</strong>,</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/mmcConsole.PNG" alt=""></p>
+<p>select <strong>“Certificates”</strong> then click “Add” button,choice <strong>“Computer account”</strong> then press “Next”,select <strong>“Local computer”</strong> and click “Finish” after that press “OK”.Expand <strong>“Trusted Root Certification Authorities”</strong> under <strong>“Certificates”</strong> node, selected “Certificates” node under <strong>“Trusted Root Certification Authorities”</strong>.Right-click this “Certificates” node and select <strong>“All Tasks” -&gt; “Import”</strong>.</p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TrustedRootCertificates_Import.PNG" alt=""> </p>
+<p>After that ,find and import the ServerGroupCertificate.cer.      </p>
+</li>
+</ul>
+<h3 id="Validation"><a href="#Validation" class="headerlink" title="Validation"></a>Validation</h3><ul>
+<li>Using <code>https://icservername:3508/websvcs/serverConfiguration</code> to check IC Server work as expected. </li>
+<li>Using <code>https://webserver/I3Root/Server1/websvcs/serverConfiguration</code> to check URL Rewrite as expected.  </li>
+<li>Using <code>https://webserver/I3Root/</code> and see the following pictures,</li>
+</ul>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/WebChatMianPage.PNG" alt=""></p>
+<p><img src="/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Customer-Agent.png" alt=""> </p>
+<p>it shows The WebChat works fine.</p>
+<blockquote>
+<p>Note:For Chat real time monitoring is same as call’s, we can retrieve the real time statistics via IC Business Manager. </p>
+</blockquote>
+<hr>
+<h2 id="Now-we-can-say-our-first-CIC-WebChat-scenario-is-done"><a href="#Now-we-can-say-our-first-CIC-WebChat-scenario-is-done" class="headerlink" title="Now, we can say our first CIC WebChat scenario is done!"></a>Now, we can say our first CIC WebChat scenario is done!</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/">CIC WebChat 4.0 Tool Installation Guide</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Jason Song</a></p>
+        <p><span>发布时间:</span>2015-04-05, 00:00:00</p>
+        <p><span>最后更新:</span>2016-07-18, 12:28:18</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/" title="CIC WebChat 4.0 Tool Installation Guide">http://yoursite.com/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/　　作者: Jason Song" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2015/12/15/Be-careful-about-little-things/">
+                    Be careful about little things
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Purpose"><span class="toc-number">1.</span> <span class="toc-text">Purpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prerequisites"><span class="toc-number">2.</span> <span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Installation-amp-Configuration-Steps"><span class="toc-number">3.</span> <span class="toc-text">Installation & Configuration Steps</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IC-Server"><span class="toc-number">3.1.</span> <span class="toc-text">IC Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web-Server"><span class="toc-number">3.2.</span> <span class="toc-text">Web Server</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Validation"><span class="toc-number">4.</span> <span class="toc-text">Validation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Now-we-can-say-our-first-CIC-WebChat-scenario-is-done"><span class="toc-number"></span> <span class="toc-text">Now, we can say our first CIC WebChat scenario is done!</span></a>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"CIC WebChat 4.0 Tool Installation Guide　| Jason Personal Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://yoursite.com/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/';
+            this.page.identifier = '2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//kongpanda.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/2015/12/15/Be-careful-about-little-things/" title="上一篇: Be careful about little things">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/02/16/Covariance-and-contravariance/">Covariance and contravariance</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/Glance-at-Hangfire/">Glance at  Hangfire</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/06/First-month-in-2016/">First month in 2016</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/29/The-interesting-codes/">The interesting codes</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/15/Be-careful-about-little-things/">Be careful about little things</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/">CIC WebChat 4.0 Tool Installation Guide</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Jason Song
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

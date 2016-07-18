@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jason Personal Blog</title>
+  <subtitle>Back to basic</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-07-18T03:52:47.487Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Jason Song</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Covariance and contravariance</title>
+    <link href="http://yoursite.com/2016/02/16/Covariance-and-contravariance/"/>
+    <id>http://yoursite.com/2016/02/16/Covariance-and-contravariance/</id>
+    <published>2016-02-15T16:00:00.000Z</published>
+    <updated>2016-07-18T03:52:47.487Z</updated>
+    
+    <content type="html">&lt;p&gt;I picked up this topic to blog, because I think this really useful for improving code cognitive ability.&lt;br&gt;When I reading “Scala in Action”  to learn Scala, this is my first time to see the terms of Covariance and contravariance in language.&lt;br&gt;In fact, they widely exist in programming languages.&lt;/p&gt;
+&lt;p&gt;Covariance and contravariance definition within the type system of a programming language.&lt;/p&gt;
+&lt;h2 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h2&gt;&lt;p&gt;Orders types of A &amp;amp; B, it is from more specific(A) to more generic(B)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;b&gt;Covariance definition: Orders types perserved&lt;/b&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Give Three types T, A, B&lt;br&gt;When T[A] -&amp;gt; T[B]&lt;br&gt;Then A -&amp;gt; B&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;b&gt;Contravariance definition: Order types reversed&lt;/b&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Give Three types T, A, B&lt;br&gt;When T[B] -&amp;gt; T[A]&lt;br&gt;Then A -&amp;gt; B &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;b&gt;Invariance definition:&lt;/b&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Give Three types T, A, B&lt;br&gt;When T[A] -&amp;gt; T[B]&lt;br&gt;Then A = B (must be equivalent type between A and B,In other words, we cannot change the type parameter of T) &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;b&gt;Here, “A -&amp;gt; B” notation means  A conform to B.&lt;/b&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Sample&quot;&gt;&lt;a href=&quot;#Sample&quot; class=&quot;headerlink&quot; title=&quot;Sample&quot;&gt;&lt;/a&gt;Sample&lt;/h2&gt;&lt;h3 id=&quot;Covariance-Example-1&quot;&gt;&lt;a href=&quot;#Covariance-Example-1&quot; class=&quot;headerlink&quot; title=&quot;Covariance: Example 1&quot;&gt;&lt;/a&gt;Covariance: Example 1&lt;/h3&gt;&lt;figure class=&quot;highlight scala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; zar: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;] = &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&quot;demo1&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;zar: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;] = &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;(demo1)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; ya: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Any&lt;/span&gt;] = zar&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ya: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Any&lt;/span&gt;] = &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;(demo1)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; xs: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;String&lt;/span&gt;] = zar&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;console&amp;gt;:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;: error: &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;mismatch&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; found   : &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; required: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;String&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; xs: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;String&lt;/span&gt;] = zar&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Covariance-Example-2&quot;&gt;&lt;a href=&quot;#Covariance-Example-2&quot; class=&quot;headerlink&quot; title=&quot;Covariance: Example 2&quot;&gt;&lt;/a&gt;Covariance: Example 2&lt;/h3&gt;&lt;figure class=&quot;highlight scala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;[+&lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;] &lt;/span&gt;&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; x = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;] = &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;fe497b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; y: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Any&lt;/span&gt;] = x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;y: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Any&lt;/span&gt;] = &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;fe497b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; z: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Int&lt;/span&gt;] = x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;console&amp;gt;:&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;: error: &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;mismatch&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; found   : &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;AnyRef&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; required: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Int&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; z: &lt;span class=&quot;type&quot;&gt;T&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;Int&lt;/span&gt;] = x;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Contravariance-Example&quot;&gt;&lt;a href=&quot;#Contravariance-Example&quot; class=&quot;headerlink&quot; title=&quot;Contravariance: Example&quot;&gt;&lt;/a&gt;Contravariance: Example&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; trait T[-A]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined trait T&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; val x =new T[Any]&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x: T[Any] = $anon$1@7d2cd3e&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; val y: T[String] = x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;y: T[String] = $anon$1@7d2cd3e&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; trait Animal&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined trait Animal&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; trait Cat extends Animal&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined trait Cat&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; trait func[-arg]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined trait func&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; val x =new func[Animal] &amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x: func[Animal] = $anon$1@1435cced&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; val y: func[Cat] =x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;y: func[Cat] = $anon$1@1435cced&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Combine-Covariance-amp-Contravariance&quot;&gt;&lt;a href=&quot;#Combine-Covariance-amp-Contravariance&quot; class=&quot;headerlink&quot; title=&quot;Combine Covariance &amp;amp; Contravariance&quot;&gt;&lt;/a&gt;Combine Covariance &amp;amp; Contravariance&lt;/h3&gt;&lt;figure class=&quot;highlight scala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Cat&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Cat&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func&lt;/span&gt;[-arg,+&lt;span class=&quot;type&quot;&gt;Result&lt;/span&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;defined &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; x = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; func[&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;]&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;x: func[&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;] = $anon$&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;5e546&lt;/span&gt;ed6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; y:func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;y: func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = $anon$&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;5e546&lt;/span&gt;ed6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; z:func[&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;z: func[&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = $anon$&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;fa796ff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; a:func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;a: func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Animal&lt;/span&gt;] = $anon$&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;fa796ff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scala&amp;gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; b:func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;] = x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b: func[&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;,&lt;span class=&quot;type&quot;&gt;Cat&lt;/span&gt;] = $anon$&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;@&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;fa796ff&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Typically, during the coding process, we will often use them to achieve certain functionality.&lt;/p&gt;
+&lt;p&gt;From C# language, a little different from Scala,&lt;br&gt;IList&lt;t&gt; is invariant on T, So a IList&lt;cat&gt; is not a IList&lt;animal&gt; and a IList&lt;animal&gt; is not a IList&lt;cat&gt;.&lt;/cat&gt;&lt;/animal&gt;&lt;/animal&gt;&lt;/cat&gt;&lt;/t&gt;&lt;/p&gt;
+&lt;p&gt;Why?&lt;br&gt;In C#, List is a mutable datastructure&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;interface IList&amp;lt;T&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    void Insert(int index, T item);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    IEnumerator&amp;lt;T&amp;gt; GetEnumerator();    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;In Scala, List is an immutable datastructure, defined as followed:&lt;br&gt;&lt;figure class=&quot;highlight scala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;sealed&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;List&lt;/span&gt;[+&lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AbstractSeq&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;] &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;tail&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;/span&gt;::[&lt;span class=&quot;type&quot;&gt;B&lt;/span&gt; &amp;gt;: &lt;span class=&quot;type&quot;&gt;A&lt;/span&gt;] (x: &lt;span class=&quot;type&quot;&gt;B&lt;/span&gt;): &lt;span class=&quot;type&quot;&gt;List&lt;/span&gt;[&lt;span class=&quot;type&quot;&gt;B&lt;/span&gt;] =&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; scala.collection.immutable.::(x, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;We can follow the simple rule In/Out annotations on its type parameters  to remeber them easily.&lt;br&gt;For “In” on its type parameters, we can follow as “Contravariance”. For “out”, can follow as “Covariance”.&lt;br&gt;Neither “In” nor “Out”, follow as “Invariance”.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quote from &lt;a href=&quot;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Covariance and contravariance (computer_science)&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id=&quot;Inheritance-in-object-oriented-languages&quot;&gt;&lt;a href=&quot;#Inheritance-in-object-oriented-languages&quot; class=&quot;headerlink&quot; title=&quot;Inheritance in object-oriented languages&quot;&gt;&lt;/a&gt;Inheritance in object-oriented languages&lt;/h3&gt;&lt;p&gt;When a subclass overrides a method in a superclass, the compiler must check that the overriding method has the right type. While some languages require that the type exactly matches the type in the superclass (invariance), it is also type safe to allow the overriding method to have a “better” type. By the usual subtyping rule for function types, this means that the overriding method should return a more specific type (return type covariance), and accept a more general argument (argument type contravariance)&lt;br&gt;&lt;img src=&quot;/blog/images/Covariance-and-contravariance/imagesone.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;All the above information to enable us to write reasonable codes.  &lt;/p&gt;
+&lt;p&gt;I think have a good understanding of them can also help me to understand the difference between “Abstract Factory” and “Service Locator”.&lt;/p&gt;
+&lt;p&gt;A nice blog about  &lt;a href=&quot;http://blog.ploeh.dk/2010/11/01/PatternRecognitionAbstractFactoryorServiceLocator/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pattern Recognition: Abstract Factory or Service Locator&lt;/a&gt; written by Mark Seemann, which is worth taking time to read.&lt;/p&gt;
+&lt;p&gt;Please refer the below documents and blogs, for more clear understanding.&lt;/p&gt;
+&lt;h2 id=&quot;References&quot;&gt;&lt;a href=&quot;#References&quot; class=&quot;headerlink&quot; title=&quot;References&quot;&gt;&lt;/a&gt;References&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/ericlippert/2009/12/03/exact-rules-for-variance-validity/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Exact rules for variance validity, By Eric Lippert&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://se.ethz.ch/~meyer/ongoing/covariance/recast.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Type-safe covariance: Competent compilers can catch all catcalls, by Howard, Mark; Bezault, Eric; Meyer, Bertrand; Colnet, Dominique; Stapf, Emmanuel; Arnout, Karine; Keller, Markus &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.artima.com/scalazine/articles/scalas_type_system.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Purpose of Scala’s Type System: A Conversation with Martin Odersky, Part III, by Bill Venners and Frank Sommers&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Covariance and contravariance in program area
+    
+    </summary>
+    
+      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+    
+    
+      <category term="Commom" scheme="http://yoursite.com/tags/Commom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Glance at  Hangfire</title>
+    <link href="http://yoursite.com/2016/01/08/Glance-at-Hangfire/"/>
+    <id>http://yoursite.com/2016/01/08/Glance-at-Hangfire/</id>
+    <published>2016-01-07T16:00:00.000Z</published>
+    <updated>2016-07-18T03:52:49.412Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Defination-on-the-offical-site&quot;&gt;&lt;a href=&quot;#Defination-on-the-offical-site&quot; class=&quot;headerlink&quot; title=&quot;Defination on the offical site&quot;&gt;&lt;/a&gt;Defination on the offical site&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Hangfire is an open-source &lt;em&gt;framework&lt;/em&gt; that help you to create, process and manage your background jobs.&lt;/li&gt;
+&lt;li&gt;Hangfire allows you to kick off &lt;em&gt;method calls&lt;/em&gt; &lt;strong&gt;outside of the request processing pipeline&lt;/strong&gt; in a very easy, but reliable way.&lt;br&gt;These method invocations are performed in a background thread and called background jobs.&lt;/li&gt;
+&lt;li&gt;CPU and I/O intensive, long-running and short-running jobs are supported.No Windows Service / Task Scheduler required. Backed by Redis, SQL Server, SQL Azure and MSMQ.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Similar framework: &lt;a href=&quot;https://github.com/resque/resque&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Resque&lt;/a&gt;, &lt;a href=&quot;http://sidekiq.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sidekiq&lt;/a&gt;, &lt;a href=&quot;http://www.celeryproject.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Celery&lt;/a&gt; and &lt;a href=&quot;https://github.com/collectiveidea/delayed_job&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;delayed_job&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Three-main-components&quot;&gt;&lt;a href=&quot;#Three-main-components&quot; class=&quot;headerlink&quot; title=&quot;Three main components:&quot;&gt;&lt;/a&gt;Three main components:&lt;/h2&gt;&lt;h3 id=&quot;1-Hangfire-Client&quot;&gt;&lt;a href=&quot;#1-Hangfire-Client&quot; class=&quot;headerlink&quot; title=&quot;1. Hangfire Client&quot;&gt;&lt;/a&gt;1. Hangfire Client&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Main responsibility is background jobs creation and save these jobs to storage.   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;2-Hangfire-Storage&quot;&gt;&lt;a href=&quot;#2-Hangfire-Storage&quot; class=&quot;headerlink&quot; title=&quot;2. Hangfire Storage&quot;&gt;&lt;/a&gt;2. Hangfire Storage&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Keeping background job and related processing information inside a persistent storage. To make job implementation reliable,Which help jobs to survive whatever application restarts or server reboot,etc.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;3-Hangfire-Server&quot;&gt;&lt;a href=&quot;#3-Hangfire-Server&quot; class=&quot;headerlink&quot; title=&quot;3. Hangfire Server&quot;&gt;&lt;/a&gt;3. Hangfire Server&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Main task in this component is fetch jobs from storage and process them, also inculding clean old data. Here important is job fetching and processing all through &lt;em&gt;a set of dedicated background threads (not thread pool) &lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/Glance-at-Hangfire/relationship.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This relationship graph also can be generated by &lt;a href=&quot;http://knsv.github.io/mermaid/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mermaid&lt;/a&gt;(:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&amp;quot;mermaid&amp;quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      sequenceDiagram&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Hangfire Client-&amp;gt;&amp;gt; Job Storage: 1.create a Job&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Job Storage-&amp;gt;&amp;gt; Hangfire Client: 2.Return to a caller&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Hangfire Server-&amp;gt;&amp;gt; Job Storage: 3.Fetch next&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Job Storage-&amp;gt;&amp;gt; Hangfire Server: 4.Return Job&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Hangfire Server-&amp;gt;&amp;gt; Hangfire Server: 5.Perform in background&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Note right of Hangfire Server: Including Job cleaning after processing succeeds&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Various-types-of-Background-Jobs-support&quot;&gt;&lt;a href=&quot;#Various-types-of-Background-Jobs-support&quot; class=&quot;headerlink&quot; title=&quot;Various types of Background Jobs support&quot;&gt;&lt;/a&gt;Various types of Background Jobs support&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Fire and forget:&lt;/li&gt;
+&lt;li&gt;Delay&lt;/li&gt;
+&lt;li&gt;Recurring&lt;/li&gt;
+&lt;li&gt;Continuations&lt;/li&gt;
+&lt;li&gt;Batches&lt;/li&gt;
+&lt;li&gt;Batch Continuations&lt;/li&gt;
+&lt;li&gt;Background Process&lt;br&gt;Some above Job types are only supported in Pro, such as Batches related, please check &lt;a href=&quot;http://hangfire.io/overview.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;it&lt;/a&gt; for the detail.     &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Basic-Packages&quot;&gt;&lt;a href=&quot;#Basic-Packages&quot; class=&quot;headerlink&quot; title=&quot;Basic Packages&quot;&gt;&lt;/a&gt;Basic Packages&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Hangfire&lt;/strong&gt; – bootstrapper package that is intended to be installed only for ASP.NET applications that uses SQL Server as a job storage. It simply references to Hangfire.Core, Hangfire.SqlServer and Microsoft.Owin.Host.SystemWeb packages.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hangfire.Core&lt;/strong&gt; – basic package that contains all core components of Hangfire. It can be used in any project type, including ASP.NET application, Windows Service, Console, any OWIN-compatible web application, Azure Worker Role, etc.&lt;/p&gt;
+&lt;p&gt;All these pakckages are provided via &lt;a href=&quot;https://www.nuget.org/packages?q=hangfire&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NuGet Gallery site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next time I will use demo sample to check the functions in each component.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Defination-on-the-offical-site&quot;&gt;&lt;a href=&quot;#Defination-on-the-offical-site&quot; class=&quot;headerlink&quot; title=&quot;Defination on the offical site&quot;&gt;
+    
+    </summary>
+    
+      <category term="ToolKit" scheme="http://yoursite.com/categories/ToolKit/"/>
+    
+    
+      <category term="Background Job" scheme="http://yoursite.com/tags/Background-Job/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>First month in 2016</title>
+    <link href="http://yoursite.com/2016/01/06/First-month-in-2016/"/>
+    <id>http://yoursite.com/2016/01/06/First-month-in-2016/</id>
+    <published>2016-01-05T16:00:00.000Z</published>
+    <updated>2016-07-07T14:40:59.239Z</updated>
+    
+    <content type="html">&lt;p&gt;Happy new year! This is my first blog in 2016. I list a couple tasks in coming month  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Read Book&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dependency Injection in NET (New Start)&lt;/li&gt;
+&lt;li&gt;Functional Programming in Scala (Refresh)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pick up two OSS PJ to learn&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RavenDB &lt;/li&gt;
+&lt;li&gt;Hangfire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Setup one OSS project on Github   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KungFu (Should use this name)&lt;br&gt; An application to handle Weixin message.    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Write ASP.NET 5 blogs to record my learning progress.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Happy new year! This is my first blog in 2016. I list a couple tasks in coming month  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Read Book&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dependency 
+    
+    </summary>
+    
+      <category term="Plan" scheme="http://yoursite.com/categories/Plan/"/>
+    
+    
+      <category term="Commom" scheme="http://yoursite.com/tags/Commom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The interesting codes</title>
+    <link href="http://yoursite.com/2015/12/29/The-interesting-codes/"/>
+    <id>http://yoursite.com/2015/12/29/The-interesting-codes/</id>
+    <published>2015-12-28T16:00:00.000Z</published>
+    <updated>2016-07-18T03:52:34.812Z</updated>
+    
+    <content type="html">&lt;p&gt;Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figures are given which  captured by Wireshark, now how can we recognise the relationship between them?&lt;/p&gt;
+&lt;p&gt;First code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (StreamWriter requestWriter = &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StreamWriter(webStream, Encoding.GetEncoding(&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;)))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        requestWriter.Write(str_json);       &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Second code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[] bytejson = System.Text.Encoding.UTF8.GetBytes(str_json);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentLength = bytejson.Length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    webStream.Write(bytejson, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, bytejson.Length);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    webStream.Flush();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Third code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (StreamWriter requestWriter = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StreamWriter(webStream)))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        requestWriter.Write(str_json);        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;First package figure&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/The-interesting-codes/first.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Second package figure&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/The-interesting-codes/second.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figu
+    
+    </summary>
+    
+      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+    
+    
+      <category term="CSharp" scheme="http://yoursite.com/tags/CSharp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Be careful about little things</title>
+    <link href="http://yoursite.com/2015/12/15/Be-careful-about-little-things/"/>
+    <id>http://yoursite.com/2015/12/15/Be-careful-about-little-things/</id>
+    <published>2015-12-14T16:00:00.000Z</published>
+    <updated>2016-07-18T03:28:58.656Z</updated>
+    
+    <content type="html">&lt;p&gt;I did not write blog for a long time. First, I am not a man to good at writing. Second, for me, the previous blog site is not convenience to help me focus on writing. Hope this can keep me staying here to share my learning, thought, feeling with happiness and also sadness in the following days.    &lt;/p&gt;
+&lt;p&gt;A few month ago, one system I supported met  performance downgrade, end users can not operate as normal any more. Based on log information, found such below code in our application code base.&lt;/p&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;SomeService&lt;/span&gt; : &lt;span class=&quot;title&quot;&gt;ISomeService&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; SqlConnection con = ...;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    …&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    …&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        con.Open();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        …&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        …     &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (Exception e)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        log.Error(&lt;span class=&quot;string&quot;&gt;&quot;Unexpect exception: &quot;&lt;/span&gt; + e.ToString());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (con != &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            con.Close();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;It’s pretty easy to idenfity the issue — sharing source in multiple threads. It’s also straightforward to reproduce the exception utilizing Demo sample.Check the URL for &lt;a href=&quot;https://github.com/kongpanda/DemoSample/tree/master/StaticDemo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Demo sample&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Here, I just want to show a demo about the sharing resource in multiple threads issue, not cover whether it is fine or not uisng DB connection object as static&lt;br&gt;field and why not.&lt;/p&gt;
+&lt;p&gt;Please check following links for detail about &lt;strong&gt;static&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://csharpindepth.com/Articles/General/BeforeFieldInit.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;C# and beforefieldinit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://codeblog.jonskeet.uk/2010/01/26/type-initialization-changes-in-net-4-0/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Type initialization changes in .NET 4.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.mischel.com/2013/03/26/be-careful-with-static-classes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Be careful with static classes&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      Do not miss little things
+    
+    </summary>
+    
+      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+    
+    
+      <category term="CSharp" scheme="http://yoursite.com/tags/CSharp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CIC WebChat 4.0 Tool Installation Guide</title>
+    <link href="http://yoursite.com/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/"/>
+    <id>http://yoursite.com/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/</id>
+    <published>2015-04-04T16:00:00.000Z</published>
+    <updated>2016-07-18T04:28:18.196Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Purpose&quot;&gt;&lt;a href=&quot;#Purpose&quot; class=&quot;headerlink&quot; title=&quot;Purpose&quot;&gt;&lt;/a&gt;Purpose&lt;/h3&gt;&lt;p&gt;This guide is a goal for CIC WebChat implementation evaluation.&lt;/p&gt;
+&lt;h3 id=&quot;Prerequisites&quot;&gt;&lt;a href=&quot;#Prerequisites&quot; class=&quot;headerlink&quot; title=&quot;Prerequisites&quot;&gt;&lt;/a&gt;Prerequisites&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A web server with Windows 2008 R2 &amp;amp; II7.5&lt;/li&gt;
+&lt;li&gt;A IC server 4.0 (Only one for this scenario,Not HA)&lt;/li&gt;
+&lt;li&gt;A client PC with Interaction Client:.Net Edition installed&lt;/li&gt;
+&lt;li&gt;WebSvcsConfiguration.zip &amp;amp; WebSvcsI3Root.zip, these two zip files locate in //ICServer/IC_WebServicesChat, ICServer is the server installed IC 4.0 package. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In this scenario, we only focus on Windows &amp;amp; IIS platform. For other web server installation,please refer to the original document.&lt;br&gt; And also, we do not cover IC server 4.0 installation,we assume that IC server and the appropriate licenses are all done for this scenario.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Installation-amp-Configuration-Steps&quot;&gt;&lt;a href=&quot;#Installation-amp-Configuration-Steps&quot; class=&quot;headerlink&quot; title=&quot;Installation &amp;amp; Configuration Steps&quot;&gt;&lt;/a&gt;Installation &amp;amp; Configuration Steps&lt;/h3&gt;&lt;h4 id=&quot;IC-Server&quot;&gt;&lt;a href=&quot;#IC-Server&quot; class=&quot;headerlink&quot; title=&quot;IC Server&quot;&gt;&lt;/a&gt;IC Server&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Create a Chat ACD queue named “TestChat” by IA tool.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Enable queue ACD， Active，Record All Calls， Emails，Chats and Instant Questions in this workgroup functionality.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG&quot; alt=&quot;&quot;&gt;.&lt;/p&gt;
+&lt;p&gt;Select &lt;strong&gt;“ACD”&lt;/strong&gt; Tab on &lt;strong&gt;“Workgroup Configuration - TestChat”&lt;/strong&gt;, &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-2.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Set the value of Chat Max.Assign &amp;gt;=1, this value can be overwritten later for specific agent based on his capability.   &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Create an agent account named “TestAgent”.&lt;/li&gt;
+&lt;li&gt;Create Station with Chat &amp;amp; ACD access license.&lt;h4 id=&quot;Web-Server&quot;&gt;&lt;a href=&quot;#Web-Server&quot; class=&quot;headerlink&quot; title=&quot;Web Server&quot;&gt;&lt;/a&gt;Web Server&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&quot;Current version is 3&quot;&gt;ARR&lt;/a&gt; and install it on web server. &lt;em&gt;Using this to rewrite the chat request sent by the customer to the back-end IC server.&lt;/em&gt; &lt;/li&gt;
+&lt;li&gt;Create /I3Root/Server1 directory under IIS default web site , this we use the default IIS root directory C:/inetpub/wwwroot &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Enable https, select hostname via IIS Manager console and double click &lt;strong&gt;Server Certificates&lt;/strong&gt; on right pane.See the blow figure.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-Settingone.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;For this evaluation purpose, we use “Create Self-Signed Certificate”.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-SelfSign.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;After the above steps, Click &lt;strong&gt;“Binding…”&lt;/strong&gt; from &lt;strong&gt;Actions&lt;/strong&gt; pane after selecting &lt;strong&gt;“Default Web Site”&lt;/strong&gt; on IIS Manager to add https port binding.     &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Setup URL rewrite Rule, Select “Server1” item under “Default Web Site” -&amp;gt; “I3Root”, double click &lt;strong&gt;“URL Rewrite”&lt;/strong&gt;,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/URLRewrite.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;click “Add Rule(s)…” from the right &lt;strong&gt;Action&lt;/strong&gt; pane then add rule window will pop up as below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseProxy.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Select &lt;strong&gt;“Reverse Proxy”&lt;/strong&gt; and click “OK” button,the following window will show,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseRuleOne.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;type ICServer in the &lt;strong&gt;Enter the server name or the IP address where HTTP requests will be&lt;br&gt;forwarded&lt;/strong&gt; text box, &lt;strong&gt;clear “Enable SSL offloading”&lt;/strong&gt; causing the connection between the customer and the web server, the connection between the web server and the IC server are both SSL.&lt;br&gt; &lt;strong&gt;We strong recommend, put the Full IC Server’s hostname here and make sure that the web server can refer to the IC Server using the IC Server hostname via DNS or the web server’s host file.&lt;/strong&gt;After finish rules addition,we will get the result as. &lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/RewriteRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; Double click this rule,scroll down and locate the &lt;strong&gt;Action&lt;/strong&gt; section in the pop window,&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ICserverRewireRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; key in such information &lt;code&gt;{C:1}://ICServer Full hostname:3508/{R:1}&lt;/code&gt; in &lt;strong&gt;“Rewrute URL”&lt;/strong&gt; text box, then click “Apply” button on the right “Action” pane.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unzip WebSvcsI3Root.zip, retrieve contents under I3Root directory and put them into web site, here is C:/inetpub/wwwroot/I3Root.On other hand, if not create I3Root under C:/inetpub/wwwroot previously, this can copy or move the unzip contents into &lt;strong&gt;C:/inetpub/wwwroot&lt;/strong&gt; including &lt;em&gt;I3Root&lt;/em&gt; directory .&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Run the interaction Web Tools Configuration Utility,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/I3WebServicesConfigUtility-1.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;this tool is included into WebSvcsConfiguration.zip. If you only want to have Chat, Clear “call back” within Interaction Type section. Because we using SSL among Web server and IC Server, please make “Secure Connetion(HTTPs)” enable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Copy ServerGroupCertificate.cer to the web server, make sure this file must not be accessed from web site. This CA file is located  D:/I3/IC/Certificates/ServerGroup on IC Server.&lt;em&gt;Note:If IC Server name is change,the file must be regenerated,and we re-import certificate by the following step.&lt;/em&gt; 1.Opne MMC Console via key the mmc command in OS’s run box.Click &lt;strong&gt;“Add/Remove Snap-in…”&lt;/strong&gt;,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/mmcConsole.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;select &lt;strong&gt;“Certificates”&lt;/strong&gt; then click “Add” button,choice &lt;strong&gt;“Computer account”&lt;/strong&gt; then press “Next”,select &lt;strong&gt;“Local computer”&lt;/strong&gt; and click “Finish” after that press “OK”.Expand &lt;strong&gt;“Trusted Root Certification Authorities”&lt;/strong&gt; under &lt;strong&gt;“Certificates”&lt;/strong&gt; node, selected “Certificates” node under &lt;strong&gt;“Trusted Root Certification Authorities”&lt;/strong&gt;.Right-click this “Certificates” node and select &lt;strong&gt;“All Tasks” -&amp;gt; “Import”&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TrustedRootCertificates_Import.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;After that ,find and import the ServerGroupCertificate.cer.      &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Validation&quot;&gt;&lt;a href=&quot;#Validation&quot; class=&quot;headerlink&quot; title=&quot;Validation&quot;&gt;&lt;/a&gt;Validation&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Using &lt;code&gt;https://icservername:3508/websvcs/serverConfiguration&lt;/code&gt; to check IC Server work as expected. &lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;https://webserver/I3Root/Server1/websvcs/serverConfiguration&lt;/code&gt; to check URL Rewrite as expected.  &lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;https://webserver/I3Root/&lt;/code&gt; and see the following pictures,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/WebChatMianPage.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Customer-Agent.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;it shows The WebChat works fine.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note:For Chat real time monitoring is same as call’s, we can retrieve the real time statistics via IC Business Manager. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Now-we-can-say-our-first-CIC-WebChat-scenario-is-done&quot;&gt;&lt;a href=&quot;#Now-we-can-say-our-first-CIC-WebChat-scenario-is-done&quot; class=&quot;headerlink&quot; title=&quot;Now, we can say our first CIC WebChat scenario is done!&quot;&gt;&lt;/a&gt;Now, we can say our first CIC WebChat scenario is done!&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      This blog is written a few months ago, to upload it only for late check purpose.
+    
+    </summary>
+    
+      <category term="Call Centre" scheme="http://yoursite.com/categories/Call-Centre/"/>
+    
+    
+      <category term="CIC" scheme="http://yoursite.com/tags/CIC/"/>
+    
+      <category term="WebChat" scheme="http://yoursite.com/tags/WebChat/"/>
+    
+  </entry>
+  
+</feed>
