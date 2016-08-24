@@ -18,16 +18,16 @@
 <meta name="description" content="Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figures are given which  captured by Wireshark, now how can we reco">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The interesting codes">
-<meta property="og:url" content="http://yoursite.com/2015/12/29/The-interesting-codes/index.html">
+<meta property="og:url" content="http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/index.html">
 <meta property="og:site_name" content="Jason Personal Blog">
 <meta property="og:description" content="Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figures are given which  captured by Wireshark, now how can we reco">
-<meta property="og:image" content="http://yoursite.com/blog/images/The-interesting-codes/first.png">
-<meta property="og:image" content="http://yoursite.com/blog/images/The-interesting-codes/second.png">
-<meta property="og:updated_time" content="2016-07-18T03:52:34.812Z">
+<meta property="og:image" content="http://blog.kongfupanda.com.cn/images/The-interesting-codes/first.png">
+<meta property="og:image" content="http://blog.kongfupanda.com.cn/images/The-interesting-codes/second.png">
+<meta property="og:updated_time" content="2016-08-24T06:19:36.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The interesting codes">
 <meta name="twitter:description" content="Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figures are given which  captured by Wireshark, now how can we reco">
-<meta name="twitter:image" content="http://yoursite.com/blog/images/The-interesting-codes/first.png">
+<meta name="twitter:image" content="http://blog.kongfupanda.com.cn/images/The-interesting-codes/first.png">
 
 <link rel="apple-touch-icon" href= "//apple-touch-icon.png">
 
@@ -313,9 +313,9 @@
 <p>Second code:<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());</div><div class="line">request.Method = <span class="string">"POST"</span>;</div><div class="line">request.ContentType = <span class="string">"application/json"</span>;</div><div class="line"></div><div class="line"><span class="keyword">byte</span>[] bytejson = System.Text.Encoding.UTF8.GetBytes(str_json);</div><div class="line">request.ContentLength = bytejson.Length;</div><div class="line"></div><div class="line"><span class="keyword">using</span> (Stream webStream = request.GetRequestStream())</div><div class="line">&#123;</div><div class="line">    webStream.Write(bytejson, <span class="number">0</span>, bytejson.Length);</div><div class="line">    webStream.Flush();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>Third code:<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());</div><div class="line">request.Method = <span class="string">"POST"</span>;</div><div class="line">request.ContentType = <span class="string">"application/json"</span>;</div><div class="line"><span class="keyword">using</span> (Stream webStream = request.GetRequestStream())</div><div class="line">&#123;</div><div class="line">    <span class="keyword">using</span> (StreamWriter requestWriter = <span class="keyword">new</span> StreamWriter(webStream)))</div><div class="line">    &#123;</div><div class="line">        requestWriter.Write(str_json);        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>First package figure</p>
-<p><img src="/blog/images/The-interesting-codes/first.png" alt=""></p>
+<p><img src="/images/The-interesting-codes/first.png" alt=""></p>
 <p>Second package figure</p>
-<p><img src="/blog/images/The-interesting-codes/second.png" alt=""></p>
+<p><img src="/images/The-interesting-codes/second.png" alt=""></p>
 
       
     </div>
@@ -327,10 +327,10 @@
         <p><span>Title:</span><a href="/2015/12/29/The-interesting-codes/">The interesting codes</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Jason Song</a></p>
         <p><span>Created:</span>2015-12-29, 00:00:00</p>
-        <p><span>Updated:</span>2016-07-18, 11:52:34</p>
+        <p><span>Updated:</span>2016-08-24, 14:19:36</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2015/12/29/The-interesting-codes/" title="The interesting codes">http://yoursite.com/2015/12/29/The-interesting-codes/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2015/12/29/The-interesting-codes/　　By Jason Song" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2015/12/29/The-interesting-codes/" title="The interesting codes">http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/</a>
+            <span class="copy-path" data-clipboard-text="From http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/　　By Jason Song" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -418,7 +418,7 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2015/12/29/The-interesting-codes/';
+            this.page.url = 'http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/';
             this.page.identifier = '2015/12/29/The-interesting-codes/';
         };
         var loadComment = function(){

@@ -4,9 +4,9 @@
   <subtitle>Back to basic</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-18T03:52:47.487Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://blog.kongfupanda.com.cn/"/>
+  <updated>2016-08-24T06:19:20.947Z</updated>
+  <id>http://blog.kongfupanda.com.cn/</id>
   
   <author>
     <name>Jason Song</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Covariance and contravariance</title>
-    <link href="http://yoursite.com/2016/02/16/Covariance-and-contravariance/"/>
-    <id>http://yoursite.com/2016/02/16/Covariance-and-contravariance/</id>
+    <link href="http://blog.kongfupanda.com.cn/2016/02/16/Covariance-and-contravariance/"/>
+    <id>http://blog.kongfupanda.com.cn/2016/02/16/Covariance-and-contravariance/</id>
     <published>2016-02-15T16:00:00.000Z</published>
-    <updated>2016-07-18T03:52:47.487Z</updated>
+    <updated>2016-08-24T06:19:20.947Z</updated>
     
     <content type="html">&lt;p&gt;I picked up this topic to blog, because I think this really useful for improving code cognitive ability.&lt;br&gt;When I reading “Scala in Action”  to learn Scala, this is my first time to see the terms of Covariance and contravariance in language.&lt;br&gt;In fact, they widely exist in programming languages.&lt;/p&gt;
 &lt;p&gt;Covariance and contravariance definition within the type system of a programming language.&lt;/p&gt;
@@ -51,7 +51,7 @@
 &lt;p&gt;We can follow the simple rule In/Out annotations on its type parameters  to remeber them easily.&lt;br&gt;For “In” on its type parameters, we can follow as “Contravariance”. For “out”, can follow as “Covariance”.&lt;br&gt;Neither “In” nor “Out”, follow as “Invariance”.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Quote from &lt;a href=&quot;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Covariance and contravariance (computer_science)&lt;/a&gt;)&lt;/p&gt;
-&lt;h3 id=&quot;Inheritance-in-object-oriented-languages&quot;&gt;&lt;a href=&quot;#Inheritance-in-object-oriented-languages&quot; class=&quot;headerlink&quot; title=&quot;Inheritance in object-oriented languages&quot;&gt;&lt;/a&gt;Inheritance in object-oriented languages&lt;/h3&gt;&lt;p&gt;When a subclass overrides a method in a superclass, the compiler must check that the overriding method has the right type. While some languages require that the type exactly matches the type in the superclass (invariance), it is also type safe to allow the overriding method to have a “better” type. By the usual subtyping rule for function types, this means that the overriding method should return a more specific type (return type covariance), and accept a more general argument (argument type contravariance)&lt;br&gt;&lt;img src=&quot;/blog/images/Covariance-and-contravariance/imagesone.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Inheritance-in-object-oriented-languages&quot;&gt;&lt;a href=&quot;#Inheritance-in-object-oriented-languages&quot; class=&quot;headerlink&quot; title=&quot;Inheritance in object-oriented languages&quot;&gt;&lt;/a&gt;Inheritance in object-oriented languages&lt;/h3&gt;&lt;p&gt;When a subclass overrides a method in a superclass, the compiler must check that the overriding method has the right type. While some languages require that the type exactly matches the type in the superclass (invariance), it is also type safe to allow the overriding method to have a “better” type. By the usual subtyping rule for function types, this means that the overriding method should return a more specific type (return type covariance), and accept a more general argument (argument type contravariance)&lt;br&gt;&lt;img src=&quot;/images/Covariance-and-contravariance/imagesone.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;All the above information to enable us to write reasonable codes.  &lt;/p&gt;
 &lt;p&gt;I think have a good understanding of them can also help me to understand the difference between “Abstract Factory” and “Service Locator”.&lt;/p&gt;
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+      <category term="Program" scheme="http://blog.kongfupanda.com.cn/categories/Program/"/>
     
     
-      <category term="Commom" scheme="http://yoursite.com/tags/Commom/"/>
+      <category term="Commom" scheme="http://blog.kongfupanda.com.cn/tags/Commom/"/>
     
   </entry>
   
   <entry>
     <title>Glance at  Hangfire</title>
-    <link href="http://yoursite.com/2016/01/08/Glance-at-Hangfire/"/>
-    <id>http://yoursite.com/2016/01/08/Glance-at-Hangfire/</id>
+    <link href="http://blog.kongfupanda.com.cn/2016/01/08/Glance-at-Hangfire/"/>
+    <id>http://blog.kongfupanda.com.cn/2016/01/08/Glance-at-Hangfire/</id>
     <published>2016-01-07T16:00:00.000Z</published>
-    <updated>2016-07-18T03:52:49.412Z</updated>
+    <updated>2016-08-24T06:19:29.183Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Defination-on-the-offical-site&quot;&gt;&lt;a href=&quot;#Defination-on-the-offical-site&quot; class=&quot;headerlink&quot; title=&quot;Defination on the offical site&quot;&gt;&lt;/a&gt;Defination on the offical site&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Hangfire is an open-source &lt;em&gt;framework&lt;/em&gt; that help you to create, process and manage your background jobs.&lt;/li&gt;
@@ -97,7 +97,7 @@
 &lt;h3 id=&quot;3-Hangfire-Server&quot;&gt;&lt;a href=&quot;#3-Hangfire-Server&quot; class=&quot;headerlink&quot; title=&quot;3. Hangfire Server&quot;&gt;&lt;/a&gt;3. Hangfire Server&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Main task in this component is fetch jobs from storage and process them, also inculding clean old data. Here important is job fetching and processing all through &lt;em&gt;a set of dedicated background threads (not thread pool) &lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/Glance-at-Hangfire/relationship.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Glance-at-Hangfire/relationship.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;This relationship graph also can be generated by &lt;a href=&quot;http://knsv.github.io/mermaid/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mermaid&lt;/a&gt;(:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&amp;quot;mermaid&amp;quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      sequenceDiagram&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Hangfire Client-&amp;gt;&amp;gt; Job Storage: 1.create a Job&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Job Storage-&amp;gt;&amp;gt; Hangfire Client: 2.Return to a caller&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Hangfire Server-&amp;gt;&amp;gt; Job Storage: 3.Fetch next&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Job Storage-&amp;gt;&amp;gt; Hangfire Server: 4.Return Job&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Hangfire Server-&amp;gt;&amp;gt; Hangfire Server: 5.Perform in background&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          Note right of Hangfire Server: Including Job cleaning after processing succeeds&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Various-types-of-Background-Jobs-support&quot;&gt;&lt;a href=&quot;#Various-types-of-Background-Jobs-support&quot; class=&quot;headerlink&quot; title=&quot;Various types of Background Jobs support&quot;&gt;&lt;/a&gt;Various types of Background Jobs support&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Fire and forget:&lt;/li&gt;
@@ -120,17 +120,17 @@
     
     </summary>
     
-      <category term="ToolKit" scheme="http://yoursite.com/categories/ToolKit/"/>
+      <category term="ToolKit" scheme="http://blog.kongfupanda.com.cn/categories/ToolKit/"/>
     
     
-      <category term="Background Job" scheme="http://yoursite.com/tags/Background-Job/"/>
+      <category term="Background Job" scheme="http://blog.kongfupanda.com.cn/tags/Background-Job/"/>
     
   </entry>
   
   <entry>
     <title>First month in 2016</title>
-    <link href="http://yoursite.com/2016/01/06/First-month-in-2016/"/>
-    <id>http://yoursite.com/2016/01/06/First-month-in-2016/</id>
+    <link href="http://blog.kongfupanda.com.cn/2016/01/06/First-month-in-2016/"/>
+    <id>http://blog.kongfupanda.com.cn/2016/01/06/First-month-in-2016/</id>
     <published>2016-01-05T16:00:00.000Z</published>
     <updated>2016-07-07T14:40:59.239Z</updated>
     
@@ -168,28 +168,28 @@
     
     </summary>
     
-      <category term="Plan" scheme="http://yoursite.com/categories/Plan/"/>
+      <category term="Plan" scheme="http://blog.kongfupanda.com.cn/categories/Plan/"/>
     
     
-      <category term="Commom" scheme="http://yoursite.com/tags/Commom/"/>
+      <category term="Commom" scheme="http://blog.kongfupanda.com.cn/tags/Commom/"/>
     
   </entry>
   
   <entry>
     <title>The interesting codes</title>
-    <link href="http://yoursite.com/2015/12/29/The-interesting-codes/"/>
-    <id>http://yoursite.com/2015/12/29/The-interesting-codes/</id>
+    <link href="http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/"/>
+    <id>http://blog.kongfupanda.com.cn/2015/12/29/The-interesting-codes/</id>
     <published>2015-12-28T16:00:00.000Z</published>
-    <updated>2016-07-18T03:52:34.812Z</updated>
+    <updated>2016-08-24T06:19:36.966Z</updated>
     
     <content type="html">&lt;p&gt;Supposed one json data need to be post to an Web API, the following three pieces of code to make this job done. And also two package figures are given which  captured by Wireshark, now how can we recognise the relationship between them?&lt;/p&gt;
 &lt;p&gt;First code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (StreamWriter requestWriter = &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StreamWriter(webStream, Encoding.GetEncoding(&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;)))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        requestWriter.Write(str_json);       &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Second code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[] bytejson = System.Text.Encoding.UTF8.GetBytes(str_json);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentLength = bytejson.Length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    webStream.Write(bytejson, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, bytejson.Length);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    webStream.Flush();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Third code:&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getUrl());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.Method = &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.ContentType = &lt;span class=&quot;string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (Stream webStream = request.GetRequestStream())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; (StreamWriter requestWriter = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StreamWriter(webStream)))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        requestWriter.Write(str_json);        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;First package figure&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/The-interesting-codes/first.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/The-interesting-codes/first.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Second package figure&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/The-interesting-codes/second.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/The-interesting-codes/second.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -198,17 +198,17 @@
     
     </summary>
     
-      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+      <category term="Program" scheme="http://blog.kongfupanda.com.cn/categories/Program/"/>
     
     
-      <category term="CSharp" scheme="http://yoursite.com/tags/CSharp/"/>
+      <category term="CSharp" scheme="http://blog.kongfupanda.com.cn/tags/CSharp/"/>
     
   </entry>
   
   <entry>
     <title>Be careful about little things</title>
-    <link href="http://yoursite.com/2015/12/15/Be-careful-about-little-things/"/>
-    <id>http://yoursite.com/2015/12/15/Be-careful-about-little-things/</id>
+    <link href="http://blog.kongfupanda.com.cn/2015/12/15/Be-careful-about-little-things/"/>
+    <id>http://blog.kongfupanda.com.cn/2015/12/15/Be-careful-about-little-things/</id>
     <published>2015-12-14T16:00:00.000Z</published>
     <updated>2016-07-18T03:28:58.656Z</updated>
     
@@ -231,19 +231,19 @@
     
     </summary>
     
-      <category term="Program" scheme="http://yoursite.com/categories/Program/"/>
+      <category term="Program" scheme="http://blog.kongfupanda.com.cn/categories/Program/"/>
     
     
-      <category term="CSharp" scheme="http://yoursite.com/tags/CSharp/"/>
+      <category term="CSharp" scheme="http://blog.kongfupanda.com.cn/tags/CSharp/"/>
     
   </entry>
   
   <entry>
     <title>CIC WebChat 4.0 Tool Installation Guide</title>
-    <link href="http://yoursite.com/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/"/>
-    <id>http://yoursite.com/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/</id>
+    <link href="http://blog.kongfupanda.com.cn/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/"/>
+    <id>http://blog.kongfupanda.com.cn/2015/04/05/CIC-WebChat-4-0-Tool-Installation-Guide/</id>
     <published>2015-04-04T16:00:00.000Z</published>
-    <updated>2016-07-18T04:28:18.196Z</updated>
+    <updated>2016-08-24T06:18:51.206Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Purpose&quot;&gt;&lt;a href=&quot;#Purpose&quot; class=&quot;headerlink&quot; title=&quot;Purpose&quot;&gt;&lt;/a&gt;Purpose&lt;/h3&gt;&lt;p&gt;This guide is a goal for CIC WebChat implementation evaluation.&lt;/p&gt;
 &lt;h3 id=&quot;Prerequisites&quot;&gt;&lt;a href=&quot;#Prerequisites&quot; class=&quot;headerlink&quot; title=&quot;Prerequisites&quot;&gt;&lt;/a&gt;Prerequisites&lt;/h3&gt;&lt;ul&gt;
@@ -259,9 +259,9 @@
 &lt;h3 id=&quot;Installation-amp-Configuration-Steps&quot;&gt;&lt;a href=&quot;#Installation-amp-Configuration-Steps&quot; class=&quot;headerlink&quot; title=&quot;Installation &amp;amp; Configuration Steps&quot;&gt;&lt;/a&gt;Installation &amp;amp; Configuration Steps&lt;/h3&gt;&lt;h4 id=&quot;IC-Server&quot;&gt;&lt;a href=&quot;#IC-Server&quot; class=&quot;headerlink&quot; title=&quot;IC Server&quot;&gt;&lt;/a&gt;IC Server&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;Create a Chat ACD queue named “TestChat” by IA tool.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Enable queue ACD， Active，Record All Calls， Emails，Chats and Instant Questions in this workgroup functionality.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG&quot; alt=&quot;&quot;&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-1.PNG&quot; alt=&quot;&quot;&gt;.&lt;/p&gt;
 &lt;p&gt;Select &lt;strong&gt;“ACD”&lt;/strong&gt; Tab on &lt;strong&gt;“Workgroup Configuration - TestChat”&lt;/strong&gt;, &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-2.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/TestChat-2.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Set the value of Chat Max.Assign &amp;gt;=1, this value can be overwritten later for specific agent based on his capability.   &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Create an agent account named “TestAgent”.&lt;/li&gt;
@@ -269,34 +269,34 @@
 &lt;li&gt;Download &lt;a href=&quot;Current version is 3&quot;&gt;ARR&lt;/a&gt; and install it on web server. &lt;em&gt;Using this to rewrite the chat request sent by the customer to the back-end IC server.&lt;/em&gt; &lt;/li&gt;
 &lt;li&gt;Create /I3Root/Server1 directory under IIS default web site , this we use the default IIS root directory C:/inetpub/wwwroot &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Enable https, select hostname via IIS Manager console and double click &lt;strong&gt;Server Certificates&lt;/strong&gt; on right pane.See the blow figure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-Settingone.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-Settingone.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;For this evaluation purpose, we use “Create Self-Signed Certificate”.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-SelfSign.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/Certificates-SelfSign.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;After the above steps, Click &lt;strong&gt;“Binding…”&lt;/strong&gt; from &lt;strong&gt;Actions&lt;/strong&gt; pane after selecting &lt;strong&gt;“Default Web Site”&lt;/strong&gt; on IIS Manager to add https port binding.     &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Setup URL rewrite Rule, Select “Server1” item under “Default Web Site” -&amp;gt; “I3Root”, double click &lt;strong&gt;“URL Rewrite”&lt;/strong&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/URLRewrite.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/URLRewrite.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;click “Add Rule(s)…” from the right &lt;strong&gt;Action&lt;/strong&gt; pane then add rule window will pop up as below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseProxy.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseProxy.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Select &lt;strong&gt;“Reverse Proxy”&lt;/strong&gt; and click “OK” button,the following window will show,&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseRuleOne.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/ReverseRuleOne.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;type ICServer in the &lt;strong&gt;Enter the server name or the IP address where HTTP requests will be&lt;br&gt;forwarded&lt;/strong&gt; text box, &lt;strong&gt;clear “Enable SSL offloading”&lt;/strong&gt; causing the connection between the customer and the web server, the connection between the web server and the IC server are both SSL.&lt;br&gt; &lt;strong&gt;We strong recommend, put the Full IC Server’s hostname here and make sure that the web server can refer to the IC Server using the IC Server hostname via DNS or the web server’s host file.&lt;/strong&gt;After finish rules addition,we will get the result as. &lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/RewriteRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/RewriteRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt; Double click this rule,scroll down and locate the &lt;strong&gt;Action&lt;/strong&gt; section in the pop window,&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/ICserverRewireRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/ICserverRewireRule.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt; key in such information &lt;code&gt;{C:1}://ICServer Full hostname:3508/{R:1}&lt;/code&gt; in &lt;strong&gt;“Rewrute URL”&lt;/strong&gt; text box, then click “Apply” button on the right “Action” pane.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Unzip WebSvcsI3Root.zip, retrieve contents under I3Root directory and put them into web site, here is C:/inetpub/wwwroot/I3Root.On other hand, if not create I3Root under C:/inetpub/wwwroot previously, this can copy or move the unzip contents into &lt;strong&gt;C:/inetpub/wwwroot&lt;/strong&gt; including &lt;em&gt;I3Root&lt;/em&gt; directory .&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Run the interaction Web Tools Configuration Utility,&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/I3WebServicesConfigUtility-1.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/I3WebServicesConfigUtility-1.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;this tool is included into WebSvcsConfiguration.zip. If you only want to have Chat, Clear “call back” within Interaction Type section. Because we using SSL among Web server and IC Server, please make “Secure Connetion(HTTPs)” enable.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Copy ServerGroupCertificate.cer to the web server, make sure this file must not be accessed from web site. This CA file is located  D:/I3/IC/Certificates/ServerGroup on IC Server.&lt;em&gt;Note:If IC Server name is change,the file must be regenerated,and we re-import certificate by the following step.&lt;/em&gt; 1.Opne MMC Console via key the mmc command in OS’s run box.Click &lt;strong&gt;“Add/Remove Snap-in…”&lt;/strong&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/mmcConsole.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/mmcConsole.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;select &lt;strong&gt;“Certificates”&lt;/strong&gt; then click “Add” button,choice &lt;strong&gt;“Computer account”&lt;/strong&gt; then press “Next”,select &lt;strong&gt;“Local computer”&lt;/strong&gt; and click “Finish” after that press “OK”.Expand &lt;strong&gt;“Trusted Root Certification Authorities”&lt;/strong&gt; under &lt;strong&gt;“Certificates”&lt;/strong&gt; node, selected “Certificates” node under &lt;strong&gt;“Trusted Root Certification Authorities”&lt;/strong&gt;.Right-click this “Certificates” node and select &lt;strong&gt;“All Tasks” -&amp;gt; “Import”&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/TrustedRootCertificates_Import.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/TrustedRootCertificates_Import.PNG&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;After that ,find and import the ServerGroupCertificate.cer.      &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -305,8 +305,8 @@
 &lt;li&gt;Using &lt;code&gt;https://webserver/I3Root/Server1/websvcs/serverConfiguration&lt;/code&gt; to check URL Rewrite as expected.  &lt;/li&gt;
 &lt;li&gt;Using &lt;code&gt;https://webserver/I3Root/&lt;/code&gt; and see the following pictures,&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/WebChatMianPage.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/blog/images/CIC-WebChat-4-0-Tool-Installation-Guide/Customer-Agent.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/WebChatMianPage.PNG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CIC-WebChat-4-0-Tool-Installation-Guide/Customer-Agent.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;it shows The WebChat works fine.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Note:For Chat real time monitoring is same as call’s, we can retrieve the real time statistics via IC Business Manager. &lt;/p&gt;
@@ -320,12 +320,12 @@
     
     </summary>
     
-      <category term="Call Centre" scheme="http://yoursite.com/categories/Call-Centre/"/>
+      <category term="Call Centre" scheme="http://blog.kongfupanda.com.cn/categories/Call-Centre/"/>
     
     
-      <category term="CIC" scheme="http://yoursite.com/tags/CIC/"/>
+      <category term="CIC" scheme="http://blog.kongfupanda.com.cn/tags/CIC/"/>
     
-      <category term="WebChat" scheme="http://yoursite.com/tags/WebChat/"/>
+      <category term="WebChat" scheme="http://blog.kongfupanda.com.cn/tags/WebChat/"/>
     
   </entry>
   
