@@ -2778,6 +2778,8 @@ pre .javascript .function {
   border-radius: 0 5px 5px 0;
   margin: 5px 9px 5px 8px;
   opacity: 0.75;
+  background-color: #3e1e1e;
+  border-color: #3e1e1e;
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
