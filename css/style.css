@@ -2778,6 +2778,8 @@ pre .javascript .function {
   border-radius: 0 5px 5px 0;
   margin: 5px 9px 5px 8px;
   opacity: 0.75;
+  background-color: #ddd;
+  border-color: #ddd;
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
@@ -2835,17 +2837,13 @@ pre .javascript .function {
   border-right-color: #9c9;
 }
 .tagcloud a:before {
-   content: " ";
-  width: 4px;
-  height: 4px;
-  background-color: #fff;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+  content: " ";
+  width: 0;
+  height: 0;
   position: absolute;
-  top: 0.4375rem;
-  l
+  top: 0;
+  left: -1.1rem;
+  border: 0.5625rem solid transparent;
 }
 .tagcloud a:after {
   content: " ";
